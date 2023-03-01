@@ -12,7 +12,7 @@ function renderCoffee(coffee) {
 
 function renderCoffees(coffees) {
     var html = '';
-    for(var i = coffees.length - 1; i >= 0; i--) {
+    for (var i = coffees.length - 1; i >= 0; i--) {
         html += renderCoffee(coffees[i]);
     }
     return html;
@@ -23,8 +23,8 @@ function updateCoffees(e) {
     var selectedRoast = roastSelection.value;
     var searchedRoast = roastSearch.value;
     var filteredCoffees = [];
-    coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast || coffee.roast === searchedRoast) {
+    coffees.forEach(function (coffee) {
+        if (coffee.roast === selectedRoast || coffee.roast === searchedRoast || selectedRoast === 'all') {
             filteredCoffees.push(coffee);
         }
     });
@@ -49,11 +49,44 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
+function freshCoffee(e) {
+    e.preventDefault();
+    var coffeeName = newCoffee.value
+    var roastType = newRoast.value
+    var idNum = coffees.length
+    var neewCoffee = {name: coffeeName.toLowerCase(), roast: roastType.toString()}
+    for (let i = 0; i < idNum; i++) {
+        let n = 0;
+        let coffee = {name: coffees[i].name.toLowerCase(), roast: coffees[i].roast};
+        console.log(coffee)
+        console.log(neewCoffee)
+        if (neewCoffee === coffee) {
+            break
+        } else if (neewCoffee !== coffee) {
+            n++
+            console.log(n)
+            if (n !== idNum) {
+                continue;
+            } else if (n === idNum) {
+                coffees.push({id: idNum + 1, name: coffeeName, roast: roastType})
+                tbody.innerHTML = renderCoffees(coffees);
+            }
+        } else {
+            break
+        }
+    }
+}
+
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
+var submitButton2 = document.querySelector('#add');
 var roastSelection = document.querySelector('#roast-selection');
-var roastSearch = document.querySelector( '#roast-search');
+var roastSearch = document.querySelector('#roast-search');
+var newCoffee = document.querySelector('#new-coffee')
+var newRoast = document.querySelector('#new-roast-selection')
+
 
 tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
+submitButton2.addEventListener('click', freshCoffee);
