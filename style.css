@@ -1,9 +1,16 @@
-table {
+section {
     border-collapse: collapse;
     margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    width: 15em;
 }
-
-td, th {
+div{
+    display: flex;
+    flex-wrap: wrap;
+}
+ span {
+     display: flex;
     border: 1px solid black;
     padding: 5px 10px;
 }

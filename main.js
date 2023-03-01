@@ -1,11 +1,11 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    var html = '<tr class="coffee">';
-    html += '<td>' + coffee.id + '</td>';
-    html += '<td>' + coffee.name + '</td>';
-    html += '<td>' + coffee.roast + '</td>';
-    html += '</tr>';
+    var html = '<span class="coffee">';
+    html += '<span>' + coffee.id + '</span>';
+    html += '<span>' + coffee.name + '</span>';
+    html += '<span>' + coffee.roast + '</span>';
+    html += '</span>';
 
     return html;
 }
@@ -21,9 +21,10 @@ function renderCoffees(coffees) {
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
+    var searchedRoast = roastSearch.value;
     var filteredCoffees = [];
     coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast) {
+        if (coffee.roast === selectedRoast || coffee.roast === searchedRoast) {
             filteredCoffees.push(coffee);
         }
     });
@@ -51,6 +52,7 @@ var coffees = [
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
+var roastSearch = document.querySelector( '#roast-search');
 
 tbody.innerHTML = renderCoffees(coffees);
 
