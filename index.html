@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Coffee Shop</title>
     <!--bootstrap-->
@@ -8,55 +9,85 @@
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!--Custom CSS-->
     <link rel="stylesheet" href="style.css">
-<!--Fonts/Icons-->
+    <!--Font-->
     <div>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Vesper+Libre:wght@400;700&display=swap" rel="stylesheet">
     </div>
 </head>
 <body>
 <!--Page-->
-<section class="container-fluid">
+<section class="bckgnd container-fluid p-0">
+    <div class="white-layer p-2">
 
-    <h1 class="text-center header">Welcome to Wood-Zhang Coffee Emporium.</h1>
+        <h1 class="text-center header">Welcome to Wood-Zhang Coffee Emporium.</h1>
 
-    <div class="row">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="row">
+                    <form class="search col-12 my-5">
+                        <h2> Search for Coffee</h2>
+                        <div class="row">
+                            <label class="col-1" for="roast-selection">
+                                <img height="30" src="img/coffee_maker_FILL0_wght400_GRAD0_opsz48.png">
+                            </label>
+                            <div class="col-11">
+                                <select class="col-6 height" id="roast-selection">
+                                    <option>all</option>
+                                    <option>light</option>
+                                    <option>medium</option>
+                                    <option>dark</option>
+                                </select>
+                            </div>
+                            <div class="col-1"></div>
+                            <div class="col-11">
+                                <label for="coffee-search">
+                                    <img height="30" src="img/label_FILL0_wght400_GRAD0_opsz48.png">
+                                </label>
+                                <input class="col-6" type="text" id="coffee-search" placeholder="Search here!">
+                                <button type="submit" id="submit"><img width="30" height="30"
+                                                                       src="img/autorenew_FILL0_wght400_GRAD0_opsz48.png">
+                                </button>
+                            </div>
+                        </div>
+                    </form>
 
-    <form class="search col-4">
-        <h2> Search for Coffee</h2>
-        <label for="roast-selection"></label>
-        <select id="roast-selection">
-            <option>all</option>
-            <option>light</option>
-            <option>medium</option>
-            <option>dark</option>
-        </select>
-        <label for="coffee-search"></label>
-        <input type="text" id="coffee-search" placeholder="Search here!">
-        <input id="submit" type="submit" value="Reset"/>
-    </form>
+                    <form class="addition col-12 my-5">
+                        <h2>Add to our Selections!</h2>
+                        <div class="row">
+                            <label class="col-1" for="new-roast-selection">
+                                <img height="30" src="img/coffee_maker_FILL0_wght400_GRAD0_opsz48.png">
+                            </label>
+                            <div class="col-11">
+                                <select class="col-4" id="new-roast-selection">
+                                    <option>light</option>
+                                    <option>medium</option>
+                                    <option>dark</option>
+                                </select>
+                            </div>
+                            <div class="col-1"></div>
+                            <div class="col-11">
+                                <div class="col-12">
+                                    <label for="new-coffee">
+                                        <img height="30" src="img/new_label_FILL0_wght400_GRAD0_opsz48.png">
+                                    </label>
+                                    <input type="text" id="new-coffee" placeholder="Enter a new coffee here!">
+                                    <button id="add" type="submit"><img height="30" width="30" src="img/add_box.png">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
-    <section class="menu col-4">
-        <h3 class="coffee-list-title text-center">All Coffees!</h3>
-        <div id="coffees"></div>
-    </section>
-
-    <form class="addition col-4">
-        <h2>Add to our selections</h2>
-        <label for="new-roast-selection"></label>
-        <select id="new-roast-selection">
-            <option>light</option>
-            <option>medium</option>
-            <option>dark</option>
-        </select>
-        <label for="new-coffee"></label>
-        <input type="text" id="new-coffee" placeholder="Enter a new coffee here!">
-        <input id="add" type="submit" value="Add"/>
-    </form>
-
+            <section class="menu col-sm-12 col-md-6 my-5">
+                <h3 class="coffee-list-title text-center">All Coffees!</h3>
+                <div id="coffees"></div>
+            </section>
+        </div>
     </div>
-
 </section>
 
 <!--Custom JS-->

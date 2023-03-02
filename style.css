@@ -1,34 +1,96 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    font-family: 'Vesper Libre', serif;
+    color: #4c3525;
 }
-h1{
-    font-size: xxx-large;
+
+body {
+    display: flex;
+    /*height: 100%;*/
+    background: url('img/coffee-background.jpeg') no-repeat center;
+    background-size: cover;
 }
+
 section {
-    border-collapse: collapse;
     display: flex;
     flex-direction: column;
 }
-div{
-    flex-wrap:wrap-reverse;
-}
- span.name {
-     font-size: x-large;
-     padding:5px;
- }
- span.roast {
-     padding: 15px 10px;
- }
- img{
-     display: flex;
-     border: black solid 1px;
- }
-.search{
-    background-image: image('img/coffe-alternate.jpeg');
-}
-body{
-    background-image: image('img/coffe-alternate.jpeg');
 
+h1 {
+    font-size: xxx-large;
 }
 
+span.name {
+    font-size: x-large;
+    padding: 5px;
+}
+
+span.roast {
+    padding: 15px 10px;
+    font-weight: bold;
+}
+
+.white-layer {
+    height: 100%;
+    background-color: rgba(242, 235, 230, .6);
+}
+
+span.img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+div.parent{
+    position: relative;
+}
+
+div.dark {
+    background: #2b1e15;
+    width: 24px;
+    height: 17px;
+    position: absolute;
+    top: 18px;
+    left: 10px;
+    bottom: 20px;
+}
+
+div.medium {
+    background: #78543b;
+    width: 24px;
+    height: 17px;
+    position: absolute;
+    top: 18px;
+    left: 10px;
+    bottom: 20px;
+}
+
+div.light {
+    background: #bc9579;
+    width: 24px;
+    height: 17px;
+    position: absolute;
+    top: 18px;
+    left: 10px;
+    bottom: 20px;
+}
+
+img.child {
+    position: absolute;
+}
+#coffees{
+    padding: 5px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+button{
+    border: none;
+    background-color:#6f4e37;
+    border-radius: 10%;
+    width: 30px;
+    height: 30px;
+}
+button#submit{
+    border-radius: 100%;
+}

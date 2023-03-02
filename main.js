@@ -8,6 +8,7 @@ var newCoffee = document.querySelector('#new-coffee')
 var newRoast = document.querySelector('#new-roast-selection')
 var coffeeListTitle = document.querySelector('.coffee-list-title')
 var coffeeList = document.querySelector('#coffees');
+var addsymbol = document.querySelector("input#add[value]")
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
@@ -31,7 +32,7 @@ function renderCoffee(coffee) {
     var html = '<div class="coffee row">';
     html += '<span class="name col-7">' + coffee.name + '</span>';
     html += '<span class="roast col-3">' + coffee.roast + '</span>';
-    html += '<span class="col-1">' +'<img src="img/local_cafe_FILL0_wght400_GRAD0_opsz48.png">' + '</span>';
+    html += '<span class="img col-1">' +'<div class="parent">'+ '<div class="'+coffee.roast+' d-flex" ></div>' + '<img class="child" src="img/local_cafe_FILL0_wght400_GRAD0_opsz48.png">'+'</div>' + '</span>';
     html += '</div>';
 
     return html;
