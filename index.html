@@ -6,29 +6,48 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Coffee!</h1>
+    <div>
+        <h1>Welcome to Wood & Zhang's Coffee shop!</h1>
+    </div>
 
-    <form>
-        <label for="roast-selection"></label>
-        <select id="roast-selection">
-            <option>light</option>
-            <option>medium</option>
-            <option>dark</option>
-        </select>
-        <input id="submit" type="submit" />
-    </form>
+    <div class="search">
+        <from class="from-1">
+            <h3 class="search-type">Search your favorite coffee</h3>
+            <label for="roast-selection"></label>
+            <select class="roast" id="roast-selection">
+                <option>All</option>
+                <option>light</option>
+                <option>medium</option>
+                <option>dark</option>
+            </select>
+            <input class="selector" id="searchCoffee" type="text" placeholder="Search coffee">
+            <input class="selector myButton" id="submit" type="submit" value = "Reset"/>
+        </from>
+        <from class="from-2">
+            <h3 class="add-title">Add your own coffee!</h3>
+            <label for="input-roast"></label>
+            <h3 class="add-title-roast">Select type of roast: </h3>
+            <div class="add-roast">
+                <select class="selector" id="input-roast">
+                    <option>light</option>
+                    <option>medium</option>
+                    <option>dark</option>
+                </select>
+            </div>
+            <h3 class="new-coffee">Input your new coffee name</h3>
+            <div class="inner-form">
+                <input class="selector" id="input-name" type="text" placeholder="New Coffee Name">
+                <input class="selector myButton" id="input-submit" type="button" value="Add Coffee"/>
+            </div>
+        </from>
+    </div>
 
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>NAME</th>
-                <th>ROAST</th>
-            </tr>
-        </thead>
-        <tbody id="coffees"></tbody>
-    </table>
-
+<div class="sections">
+    <h3 class="coffee-list-title">All coffee list</h3>
+    <div class="coffee-list">
+        <div id="coffees"></div>
+    </div>
+</div>
     <script src="main.js"></script>
 </body>
 </html>
