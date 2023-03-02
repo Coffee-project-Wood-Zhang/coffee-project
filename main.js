@@ -98,6 +98,10 @@ function addCoffee(input) {
     var addRoast = inputRoast.value.toString();
     input = {id:addID, name:addName, roast:addRoast}
     coffees.push(input);
+    coffees.sort(function(a, b) {
+        var roastOrder = { light: 1, medium: 2, dark: 3 };
+        return roastOrder[a.roast] - roastOrder[b.roast];
+    });
     coffeeList.innerHTML = renderCoffees(coffees);
 }
 
