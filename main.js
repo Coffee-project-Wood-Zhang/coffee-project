@@ -7,6 +7,7 @@ var roastSelection = document.querySelector('#roast-selection');
 var coffeeSearch = document.querySelector('#coffee-search');
 var newCoffee = document.querySelector('#new-coffee')
 var newRoast = document.querySelector('#new-roast-selection')
+var coffeeListTitle = document.querySelector('.coffee-list-title')
 
 function renderCoffee(coffee) {
     var html = '<span class="coffee">';
