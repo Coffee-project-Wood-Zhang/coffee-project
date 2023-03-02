@@ -29,9 +29,9 @@ var coffees = [
 
 function renderCoffee(coffee) {
     var html = '<div class="coffee row">';
-    // html += '<span>' + coffee.id + '</span>';
-    html += '<span class="name col-8">' + coffee.name + '</span>';
-    html += '<span class="roast col-4">' + coffee.roast + '</span>';
+    html += '<span class="name col-7">' + coffee.name + '</span>';
+    html += '<span class="roast col-3">' + coffee.roast + '</span>';
+    html += '<span class="col-1">' +'<img src="img/local_cafe_FILL0_wght400_GRAD0_opsz48.png">' + '</span>';
     html += '</div>';
 
     return html;
@@ -96,6 +96,10 @@ function freshCoffee(e) {
                 continue;
             } else if (n === idNum) {
                 coffees.push({id: idNum + 1, name: coffeeName, roast: roastType})
+                coffees.sort(function(a, b) {
+                    var roastOrder = { light: 1, medium: 2, dark: 3 };
+                    return roastOrder[a.roast] - roastOrder[b.roast];
+                });
                 coffeeList.innerHTML = renderCoffees(coffees);
             }
         } else {

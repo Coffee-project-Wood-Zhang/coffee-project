@@ -8,15 +8,22 @@
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!--Custom CSS-->
     <link rel="stylesheet" href="style.css">
+<!--Fonts/Icons-->
+    <div>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap" rel="stylesheet">
+    </div>
 </head>
 <body>
+<!--Page-->
 <section class="container-fluid">
 
     <h1 class="text-center header">Welcome to Wood-Zhang Coffee Emporium.</h1>
 
     <div class="row">
 
-    <form class="col-4">
+    <form class="search col-4">
         <h2> Search for Coffee</h2>
         <label for="roast-selection"></label>
         <select id="roast-selection">
@@ -30,12 +37,12 @@
         <input id="submit" type="submit" value="Reset"/>
     </form>
 
-    <section class="col-4">
+    <section class="menu col-4">
         <h3 class="coffee-list-title text-center">All Coffees!</h3>
         <div id="coffees"></div>
     </section>
 
-    <form class=" col-4">
+    <form class="addition col-4">
         <h2>Add to our selections</h2>
         <label for="new-roast-selection"></label>
         <select id="new-roast-selection">
