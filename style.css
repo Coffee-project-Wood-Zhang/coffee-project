@@ -43,37 +43,33 @@ span.img {
     align-items: center;
 }
 div.parent{
+    display: flex;
     position: relative;
+    align-items: center;
 }
 
 div.dark {
     background: #2b1e15;
     width: 24px;
-    height: 17px;
+    height: 18px;
     position: absolute;
-    top: 18px;
     left: 10px;
-    bottom: 20px;
 }
 
 div.medium {
     background: #78543b;
     width: 24px;
-    height: 17px;
+    height: 18px;
     position: absolute;
-    top: 18px;
     left: 10px;
-    bottom: 20px;
 }
 
 div.light {
     background: #bc9579;
     width: 24px;
-    height: 17px;
+    height: 18px;
     position: absolute;
-    top: 18px;
     left: 10px;
-    bottom: 20px;
 }
 
 img.child {

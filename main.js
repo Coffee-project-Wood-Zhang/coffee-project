@@ -30,9 +30,9 @@ var coffees = [
 
 function renderCoffee(coffee) {
     var html = '<div class="coffee row">';
-    html += '<span class="name col-7">' + coffee.name + '</span>';
-    html += '<span class="roast col-3">' + coffee.roast + '</span>';
-    html += '<span class="img col-1">' +'<div class="parent">'+ '<div class="'+coffee.roast+' d-flex" ></div>' + '<img class="child" src="img/local_cafe_FILL0_wght400_GRAD0_opsz48.png">'+'</div>' + '</span>';
+    html += '<span class="name col-6">' + coffee.name + '</span>';
+    html += '<span class="roast col-2">' + coffee.roast + '</span>';
+    html += '<span class="img col-4">' +'<div class="parent">'+ '<div class="'+coffee.roast+' d-flex" ></div>' + '<img class="child" src="img/local_cafe_FILL0_wght400_GRAD0_opsz48.png">'+'</div>' + '</span>';
     html += '</div>';
 
     return html;
