@@ -16,38 +16,38 @@
     </div>
 <main class="container-fluid">
     <div class="row">
-        <div class="search col-12 col-md-6">
-            <from class="from-1">
-                <h3 class="search-type">Search your favorite coffee</h3>
+        <div class="search col-12 col-md-5">
+            <from class="from-1 border-white">
+                <h3 class="search-type bg-light text-center mb-0">Search your favorite coffee</h3>
                 <label for="roast-selection"></label>
-                <select class="roast" id="roast-selection">
+                <select class="roast w-100 mb-3 mt-0" id="roast-selection">
                     <option>All</option>
                     <option>light</option>
                     <option>medium</option>
                     <option>dark</option>
                 </select>
-                <input class="selector" id="searchCoffee" type="text" placeholder="Search coffee">
-                <input class="selector myButton" id="submit" type="submit" value = "Reset"/>
+                <input class="selector w-100 mb-3" id="searchCoffee" type="text" placeholder="Search coffee">
+                <input class="selector myButton w-100" id="submit" type="submit" value = "Reset"/>
             </from>
             <from class="from-2">
-                <h3 class="add-title">Add your own coffee!</h3>
+                <h3 class="add-title mt-5 mb-0 bg-light text-center">Add your own coffee!</h3>
                 <label for="input-roast"></label>
-                <h3 class="add-title-roast">Select type of roast: </h3>
+                <h3 class="add-title-roast text-center">Select type of roast: </h3>
                 <div class="add-roast">
-                    <select class="selector" id="input-roast">
+                    <select class="selector w-100 mb-3" id="input-roast">
                         <option>light</option>
                         <option>medium</option>
                         <option>dark</option>
                     </select>
                 </div>
-                <h3 class="new-coffee">Input your new coffee name</h3>
+                <h3 class="new-coffee text-center">Input your new coffee name</h3>
                 <div class="inner-form">
-                    <input class="selector" id="input-name" type="text" placeholder="New Coffee Name">
-                    <input class="selector myButton" id="input-submit" type="button" value="Add Coffee"/>
+                    <input class="selector w-100 mb-3" id="input-name" type="text" placeholder="New Coffee Name">
+                    <input class="selector myButton w-100 mb-3" id="input-submit" type="button" value="Add Coffee"/>
                 </div>
             </from>
         </div>
-        <div class="sections col-12 col-md-6">
+        <div class="sections col-12 col-md-7">
             <h3 class="coffee-list-title text-center">All coffee list</h3>
             <div class="coffee-list">
                 <div id="coffees"></div>
