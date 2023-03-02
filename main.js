@@ -2,7 +2,7 @@
 
 function renderCoffee(coffee) {
     var html = '<span class="coffee">';
-    html += '<span>' + coffee.id + '</span>';
+    // html += '<span>' + coffee.id + '</span>';
     html += '<span>' + coffee.name + '</span>';
     html += '<span>' + coffee.roast + '</span>';
     html += '</span>';
@@ -86,5 +86,5 @@ var newRoast = document.querySelector('#new-roast-selection')
 
 tbody.innerHTML = renderCoffees(coffees);
 
-submitButton.addEventListener('click', updateCoffees);
-submitButton2.addEventListener('click', freshCoffee);
+submitButton.addEventListener('change', updateCoffees);
+submitButton2.addEventListener('change', freshCoffee);
