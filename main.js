@@ -1,6 +1,5 @@
 "use strict"
 
-var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var submitButton2 = document.querySelector('#add');
 var roastSelection = document.querySelector('#roast-selection');
@@ -8,6 +7,7 @@ var coffeeSearch = document.querySelector('#coffee-search');
 var newCoffee = document.querySelector('#new-coffee')
 var newRoast = document.querySelector('#new-roast-selection')
 var coffeeListTitle = document.querySelector('.coffee-list-title')
+var coffeeList = document.querySelector('#coffees');
 
 function renderCoffee(coffee) {
     var html = '<span class="coffee">';
@@ -36,7 +36,7 @@ function updateCoffees(e) {
             filteredCoffees.push(coffee);
         }
     });
-    tbody.innerHTML = renderCoffees(filteredCoffees);
+    coffeeList.innerHTML = renderCoffees(filteredCoffees);
 }
 
 function searchCoffeeFunction() {
@@ -87,7 +87,7 @@ function freshCoffee(e) {
                 continue;
             } else if (n === idNum) {
                 coffees.push({id: idNum + 1, name: coffeeName, roast: roastType})
-                tbody.innerHTML = renderCoffees(coffees);
+                coffeeList.innerHTML = renderCoffees(coffees);
             }
         } else {
             break
@@ -95,7 +95,7 @@ function freshCoffee(e) {
     }
 }
 
-tbody.innerHTML = renderCoffees(coffees);
+coffeeList.innerHTML = renderCoffees(coffees);
 
 coffeeSearch.addEventListener('keyup', searchCoffeeFunction);
 roastSelection.addEventListener('change', updateCoffees);
