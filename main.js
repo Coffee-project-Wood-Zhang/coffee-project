@@ -73,6 +73,7 @@ function searchCoffeeFunction() {
             filteredCoffees.push(coffee);
         }
     });
+    coffeeListTitle.innerHTML = 'Coffee you may looking for';
     coffeeList.innerHTML = renderCoffees(filteredCoffees);
 }
 var submitButton = document.querySelector('#submit');
