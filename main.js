@@ -54,17 +54,15 @@ function freshCoffee(e) {
     var coffeeName = newCoffee.value
     var roastType = newRoast.value
     var idNum = coffees.length
-    var neewCoffee = {name: coffeeName.toLowerCase(), roast: roastType.toString()}
+    let n = 0;
+    var neewCoffee =coffeeName.toLowerCase();
     for (let i = 0; i < idNum; i++) {
-        let n = 0;
-        let coffee = {name: coffees[i].name.toLowerCase(), roast: coffees[i].roast};
-        console.log(coffee)
-        console.log(neewCoffee)
-        if (neewCoffee === coffee) {
+        let coffee =  coffees[i].name.toLowerCase();
+        if (coffee==neewCoffee) {
+            n-=1
             break
         } else if (neewCoffee !== coffee) {
-            n++
-            console.log(n)
+            n+=1
             if (n !== idNum) {
                 continue;
             } else if (n === idNum) {
