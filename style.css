@@ -1,17 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 section {
     border-collapse: collapse;
-    margin: 15px 0;
     display: flex;
     flex-direction: column;
-    width: 15em;
 }
 div{
-    display: flex;
     flex-wrap:wrap-reverse;
 }
- span {
-     display: flex;
-    border: 1px solid black;
-    padding: 5px 10px;
+ span.name {
+     font-size: xx-large;
+     padding:5px;
+ }
+ span.roast {
+     padding: 10px;
+ }
 
-}
+

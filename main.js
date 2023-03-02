@@ -28,11 +28,11 @@ var coffees = [
 ];
 
 function renderCoffee(coffee) {
-    var html = '<span class="coffee">';
+    var html = '<div class="coffee row">';
     // html += '<span>' + coffee.id + '</span>';
-    html += '<span>' + coffee.name + '</span>';
-    html += '<span>' + coffee.roast + '</span>';
-    html += '</span>';
+    html += '<span class="name col-8">' + coffee.name + '</span>';
+    html += '<span class="roast col-4">' + coffee.roast + '</span>';
+    html += '</div>';
 
     return html;
 }
