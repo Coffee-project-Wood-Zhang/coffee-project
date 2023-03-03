@@ -21,6 +21,11 @@ h1 {
     font-size: xxx-large;
 }
 
+h2{
+    padding-top: 10px;
+    text-decoration: underline;
+}
+
 span.name {
     font-size: x-large;
     padding: 5px;
@@ -103,10 +108,10 @@ button.icon-btn{
 button#submit{
     border-radius: 100%;
 }
-.extra-info{
-    border: #2b1e15 solid 1px;
-}
-
 .nav-link{
     color: #4c3525;
+}
+.nav{
+    border: none;
+
 }
