@@ -15,12 +15,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!--header-->
     <div class="header text-center py-3">
         <h1 class="banner">Welcome to Zhang's Coffee shop!</h1>
     </div>
 <main class="container-fluid">
     <div class="row">
         <div class="search col-12 col-md-5">
+            <!--search part-->
             <from class="from-1 border-white">
                 <h3 class="search-type text-center my-2 fw-bold">Search your favorite coffee</h3>
                 <label for="roast-selection"></label>
@@ -33,6 +35,7 @@
                 <input class="selector w-75 mb-3 ms-5" id="searchCoffee" type="text" placeholder="Search coffee">
                 <input class="myButton w-75 ms-5" id="submit" type="submit" value = "Reset"/>
             </from>
+            <!--add part-->
             <from class="from-2">
                 <h3 class="add-title mt-5 mb-0 text-center fw-bold">Add your own coffee</h3>
                 <label for="input-roast"></label>
@@ -44,18 +47,20 @@
                         <option>dark</option>
                     </select>
                 </div>
-                <h3 class="new-coffee text-center"><small>your new coffee name</small></h3>
+                <h3 class="new-coffee text-center"><small>Your new coffee name</small></h3>
                 <div class="inner-form">
                     <input class="selector w-75 ms-5 mb-3" id="input-name" type="text" placeholder="New Coffee Name">
                     <input class="myButton w-75 ms-5 mb-3" id="input-submit" type="button" value="Add Coffee"/>
                 </div>
             </from>
+            <!--remove part-->
             <from class="from-3">
                 <h3 class="remove text-center mt-4 my-2 fw-bold">Remove coffee you hate</h3>
                 <input class="selector w-75 mb-3 ms-5" id="remove-name" type="text" placeholder="Coffee to remove">
                 <input class="myButton w-75 ms-5" id="removeButton" type="submit" value = "Remove Coffee"/>
             </from>
         </div>
+        <!--menu-->
         <div class="sections col-12 col-md-7">
             <h3 class="coffee-list-title text-center ms-5 display-6 fw-bold">All coffees</h3>
             <div class="coffee-list">
