@@ -55,6 +55,7 @@ function updateCoffees(e) {
             filteredCoffees.push(coffee);
         }
     });
+    coffeeListTitle.innerHTML = 'Coffee you may be looking for';
     coffeeList.innerHTML = renderCoffees(filteredCoffees);
 }
 
