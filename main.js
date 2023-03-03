@@ -115,6 +115,7 @@ function addCoffee(input) {
 
 var removeSearch = document.querySelector('#remove-name');
 removeSearch.addEventListener('keyup', removeSearchFunction);
+
 function removeSearchFunction() {
     var searchInput = removeSearch.value.toLowerCase();
     var filteredCoffees = [];
@@ -148,6 +149,3 @@ function removeCoffee(input) {
     coffeeList.innerHTML = renderCoffees(coffees);
     removeName.value = '';
 }
-
-
-
