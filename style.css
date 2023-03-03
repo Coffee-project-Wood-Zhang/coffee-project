@@ -7,7 +7,7 @@
 
 body {
     display: flex;
-    /*height: 100%;*/
+    height: 100%;
     background: url('img/coffee-background.jpeg') no-repeat center;
     background-size: cover;
 }
@@ -24,15 +24,24 @@ h1 {
 span.name {
     font-size: x-large;
     padding: 5px;
+    align-self: center;
 }
 
 span.roast {
     padding: 15px 10px;
     font-weight: bold;
 }
+button.coffee{
+    border: none;
+    background: none;
+}
+
+button.coffee:hover{
+    background: rgba(255, 255, 255, .5);
+}
 
 .white-layer {
-    height: 100%;
+    height:100%;
     background-color: rgba(242, 235, 230, .6);
 }
 
@@ -43,50 +52,61 @@ span.img {
     align-items: center;
 }
 div.parent{
-    display: flex;
     position: relative;
-    align-items: center;
 }
 
 div.dark {
     background: #2b1e15;
     width: 24px;
-    height: 18px;
+    height: 17px;
     position: absolute;
     left: 10px;
+    top: 16px;
 }
 
 div.medium {
     background: #78543b;
     width: 24px;
-    height: 18px;
+    height: 17px;
     position: absolute;
     left: 10px;
+    top: 16px;
 }
 
 div.light {
     background: #bc9579;
     width: 24px;
-    height: 18px;
+    height: 17px;
     position: absolute;
     left: 10px;
+    top: 16px;
 }
 
 img.child {
     position: absolute;
 }
+
 #coffees{
     padding: 5px;
     display: flex;
     flex-direction: column-reverse;
 }
-button{
+
+button.icon-btn{
     border: none;
     background-color:#6f4e37;
     border-radius: 10%;
     width: 30px;
     height: 30px;
 }
+
 button#submit{
     border-radius: 100%;
+}
+.extra-info{
+    border: #2b1e15 solid 1px;
+}
+
+.nav-link{
+    color: #4c3525;
 }
