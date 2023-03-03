@@ -95,8 +95,13 @@ img.child {
     padding: 5px;
     display: flex;
     flex-direction: column-reverse;
+    height: 37.5rem;
+    overflow-y: scroll;
+    margin-bottom: 0rem;
 }
-
+p{
+    padding-top: 5px;
+}
 button.icon-btn{
     border: none;
     background-color:#6f4e37;
@@ -113,5 +118,8 @@ button#submit{
 }
 .nav{
     border: none;
-
+}
+.tab-pane, tab-content{
+    height: 12.5rem;
+    overflow-y: scroll;
 }

@@ -19,14 +19,14 @@ let coffees = [
         id: 1,
         name: 'Light City',
         roast: 'light',
-        info: "'<h2>Light City</h2><p>A strange of name as it is, Light City is generally the term used for very light roasted coffee. It is cooked until you hear the beans crack open in the oven.  </p>'",
+        info: '<h2>Light City</h2><p>A strange of name as it is, Light City is generally the term used for very light roasted coffee. It is cooked until you hear the beans crack open in the oven.  </p>',
         origin: '<h2>Light City</h2><p>Named to distinguish itself from the other city coffee variants.</p>'
     },
     {
         id: 2,
         name: 'Half City',
         roast: 'light',
-        info: "'<h2>Half City</h2><p>Is a kin to Light City, just roasted longer to give it a more coffee-esk flavor.</p>'",
+        info: '<h2>Half City</h2><p>Is a kin to Light City, just roasted longer to give it a more coffee-esk flavor.</p>',
         origin: '<h2>Half City</h2><p>Named Half-city becuase it half way to its second crack. </p>'
     },
     {
