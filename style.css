@@ -1,6 +1,23 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    font-family: 'Vesper Libre', serif;
+}
+.header {
+    background: url('img/header_bg.png') no-repeat center;
+    background-size: cover;
+}
+body {
+    background: url('img/body_bg.png') no-repeat center;
+    background-size: cover;
+    height: 100%;
+}
+.banner{
+    color: #00704A;
+    font-weight: bolder;
+}
+.search-type, .add-title, .add-title-roast, .new-coffee, .coffee-list-title, .remove {
+    color: #00704A;
 }
 #coffees {
     display: flex;
@@ -13,8 +30,10 @@
     justify-content: left;
 }
 .coffee-roast {
-    padding-left: 15px;
     padding-top: 10px;
+    margin-left: auto;
+    margin-right: 20px;
+
 }
 .myButton {
     color: white;

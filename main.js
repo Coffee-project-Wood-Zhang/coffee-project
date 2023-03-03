@@ -51,13 +51,13 @@ function updateCoffees(e) {
         }
     });
     if (selectedRoast === 'light') {
-        coffeeListTitle.innerHTML = 'Light coffee list';
+        coffeeListTitle.innerHTML = 'Light coffees';
     } else if (selectedRoast === 'medium') {
-        coffeeListTitle.innerHTML = 'Medium coffee list';
+        coffeeListTitle.innerHTML = 'Medium coffees';
     } else if (selectedRoast === 'dark') {
-        coffeeListTitle.innerHTML = 'Dark coffee list';
+        coffeeListTitle.innerHTML = 'Dark coffees';
     } else {
-        coffeeListTitle.innerHTML = 'All coffee list';
+        coffeeListTitle.innerHTML = 'All coffees';
     }
     coffeeList.innerHTML = renderCoffees(filteredCoffees);
 }
@@ -81,7 +81,7 @@ submitButton.addEventListener('click', reset);
 
 function reset() {
     roastSelection.value = 'All';
-    coffeeListTitle.innerHTML = 'All coffee list';
+    coffeeListTitle.innerHTML = 'All coffees';
     coffeeList.innerHTML = renderCoffees(coffees);
 }
 
@@ -102,6 +102,34 @@ function addCoffee(input) {
         var roastOrder = { light: 1, medium: 2, dark: 3 };
         return roastOrder[a.roast] - roastOrder[b.roast];
     });
+    coffeeList.innerHTML = renderCoffees(coffees);
+}
+
+var removeSearch = document.querySelector('#remove-name');
+removeSearch.addEventListener('keyup', removeSearchFunction);
+function removeSearchFunction() {
+    var searchInput = removeSearch.value.toLowerCase();
+    var filteredCoffees = [];
+    coffees.forEach(function (coffee){
+        if(coffee.name.toLowerCase().includes(searchInput)) {
+            filteredCoffees.push(coffee);
+        }
+    });
+    coffeeListTitle.innerHTML = 'Coffee you may want to remove';
+    coffeeList.innerHTML = renderCoffees(filteredCoffees);
+}
+
+var removeName = document.querySelector('#remove-name');
+var removeConfirm = document.querySelector('#removeButton');
+removeConfirm.addEventListener('click', removeCoffee);
+
+function removeCoffee(input) {
+    var remove_Name = removeName.value;
+    for (var i = 0; i < coffees.length; i++) {
+        if (coffees[i].name.toLowerCase() === remove_Name.toLowerCase()) {
+            coffees.splice(i, 1);
+        }
+    }
     coffeeList.innerHTML = renderCoffees(coffees);
 }
 
