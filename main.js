@@ -133,12 +133,20 @@ removeConfirm.addEventListener('click', removeCoffee);
 
 function removeCoffee(input) {
     var remove_Name = removeName.value;
-    for (let i = 0; i < coffees.length; i++) {
-        if (coffees[i].name.toLowerCase() === remove_Name.toLowerCase()) {
-            coffees.splice(i, 1);
+    var menuCoffee = coffees.find(function (coffee) {
+        return coffee.name.toLowerCase() === remove_Name;
+    });
+    if(menuCoffee) {
+        for (let i = 0; i < coffees.length; i++) {
+            if (coffees[i].name.toLowerCase() === remove_Name.toLowerCase()) {
+                coffees.splice(i, 1);
+            }
         }
+    } else {
+        alert('OOPS, there is no ' + remove_Name + ' in the menu');
     }
     coffeeList.innerHTML = renderCoffees(coffees);
+    removeName.value = '';
 }
 
 
