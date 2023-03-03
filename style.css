@@ -45,10 +45,16 @@ body {
 .myButton:hover {
     opacity: 1;
 }
-.roast, .selector {
-    box-shadow: 1px 1px 10px 1px #00704A;
-    border: #00704A;
+.selector {
+    border: 1px solid #00704A;
     border-radius: 5px;
+}
+.selector:hover {
+    box-shadow: 1px 1px 10px 1px #00704A;
+}
+.selector:focus {
+    outline-color: #00704A;
+    box-shadow: 1px 1px 10px 1px #00704A;
 }
 
 
