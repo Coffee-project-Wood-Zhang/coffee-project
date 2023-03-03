@@ -94,15 +94,23 @@ var newCoffee = document.querySelector('#input-submit');
 newCoffee.addEventListener('click', addCoffee);
 function addCoffee(input) {
     var addID = coffees.length + 1;
-    var addName = inputName.value.toString();
+    var addName = inputName.value.toLowerCase();
     var addRoast = inputRoast.value.toString();
-    input = {id:addID, name:addName, roast:addRoast}
-    coffees.push(input);
-    coffees.sort(function(a, b) {
-        var roastOrder = { light: 1, medium: 2, dark: 3 };
-        return roastOrder[a.roast] - roastOrder[b.roast];
+    input = {id:addID, name:addName, roast:addRoast};
+    var existingCoffee = coffees.find(function (coffee) {
+        return coffee.name.toLowerCase() === addName;
     });
+    if(existingCoffee) {
+        alert(addName + ' is already in the menu');
+    } else {
+        coffees.push(input);
+        coffees.sort(function(a, b) {
+            var roastOrder = { light: 1, medium: 2, dark: 3 };
+            return roastOrder[a.roast] - roastOrder[b.roast];
+        });
+    }
     coffeeList.innerHTML = renderCoffees(coffees);
+    inputName.value = '';
 }
 
 var removeSearch = document.querySelector('#remove-name');
@@ -125,7 +133,7 @@ removeConfirm.addEventListener('click', removeCoffee);
 
 function removeCoffee(input) {
     var remove_Name = removeName.value;
-    for (var i = 0; i < coffees.length; i++) {
+    for (let i = 0; i < coffees.length; i++) {
         if (coffees[i].name.toLowerCase() === remove_Name.toLowerCase()) {
             coffees.splice(i, 1);
         }
