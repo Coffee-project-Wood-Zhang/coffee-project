@@ -230,8 +230,10 @@ for (let i = 0; i < coffees.length; i++) {
     info[i] = document.querySelector(`#coffee-${coffees[i].id}`)
     info[i].addEventListener('click', function (e) {
         e.preventDefault();
+        console.log(`clicked`)
         coffeeInfo.innerHTML = coffees[i].info;
         coffeeOrigin.innerHTML = coffees[i].origin;
     });
+    console.log(info[i])
     compiled++
 }
