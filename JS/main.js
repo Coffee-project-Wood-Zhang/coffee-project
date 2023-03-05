@@ -4,14 +4,16 @@ let submitButton = document.querySelector('#submit');
 let submitButton2 = document.querySelector('#add');
 let roastSelection = document.querySelector('#roast-selection');
 let coffeeSearch = document.querySelector('#coffee-search');
-let newCoffee = document.querySelector('#new-coffee')
-let newRoast = document.querySelector('#new-roast-selection')
-let coffeeListTitle = document.querySelector('.coffee-list-title')
+let newCoffee = document.querySelector('#new-coffee');
+let newRoast = document.querySelector('#new-roast-selection');
+let coffeeListTitle = document.querySelector('.coffee-list-title');
 let coffeeList = document.querySelector('#coffees');
-let coffeeGeneralInfo = document.querySelector('#home-tab-pane');
 let coffeeInfo = document.querySelector('#taste-tab-pane');
 let coffeeOrigin = document.querySelector('#profile-tab-pane');
-
+let infoInput = document.querySelector('#coffee-info');
+let originInput = document.querySelector('#coffee-origin');
+let info = [];
+let compiled = 0;
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 let coffees = [
@@ -47,7 +49,7 @@ let coffees = [
         id: 5,
         name: 'American',
         roast: 'medium',
-        info: '<h2>American</h2><p>This coffee is free, but also very expensive. Jokes aside this is generally a sweeter blend.  </p>',
+        info: '<h2>American</h2><p>This coffee is free, but also very expensive. Jokes aside this is generally a sweeter blend.</p>',
         origin: '<h2>American</h2><p>It named after the country it was created in.</p>'
     },
     {
@@ -76,7 +78,7 @@ let coffees = [
         name: 'New Orleans',
         roast: 'dark',
         info: '<h2>New Orleans</h2><p>A dark roast inspired by the dark roast capital of american, we hope this blend can pay proper homage to the Crescent City</p>',
-        origin: '<h2>New Orleans</h2><p>As above so below</p>'
+        origin: '<h2>New Orleans</h2><p>As above so below.</p>'
     },
     {
         id: 10,
@@ -116,7 +118,7 @@ let coffees = [
 ];
 
 function renderCoffee(coffee) {
-    let html = '<button id="coffee-' + coffee.id + '" class="px-1 mx-4 list-items coffee row">';
+    let html = '<button id="coffee-' + coffee.id + '" class="px-1 mx-4 list-items coffee row">'
     html += '<span class="d-flex name col-6">' + coffee.name + '</span>';
     html += '<span class="roast col-2">' + coffee.roast + '</span>';
     html += '<span class="d-flex img col-4">' + '<div class="parent">' +
@@ -160,7 +162,6 @@ function searchCoffeeFunction() {
     coffeeList.innerHTML = renderCoffees(filteredCoffees);
 }
 
-
 function reset(e) {
     e.preventDefault();
     roastSelection.value = 'all';
@@ -169,11 +170,20 @@ function reset(e) {
     coffeeSearch.value = '';
 }
 
+function reloadInfo(e){
+    e.preventDefault();
+    console.log(compiled)
+    coffeeInfo.innerHTML = coffees[compiled].info;
+    coffeeOrigin.innerHTML = coffees[compiled].origin;
+}
+
 function freshCoffee(e) {
     e.preventDefault();
     let coffeeName = newCoffee.value
     let roastType = newRoast.value
     let idNum = coffees.length
+    let info2 = infoInput.value
+    let origin = originInput.value
     let n = 0;
     let neewCoffee = coffeeName.toLowerCase();
     for (let i = 0; i < idNum; i++) {
@@ -186,17 +196,27 @@ function freshCoffee(e) {
             if (n !== idNum) {
                 continue;
             } else if (n === idNum) {
-                coffees.push({id: idNum + 1, name: coffeeName, roast: roastType})
-                coffees.sort(function (a, b) {
-                    let roastOrder = {light: 1, medium: 2, dark: 3};
-                    return roastOrder[a.roast] - roastOrder[b.roast];
-                });
+                coffees.push({id: idNum + 1, name: coffeeName, roast: roastType, info: info2, origin: origin})
                 coffeeList.innerHTML = renderCoffees(coffees);
+                info.push(document.querySelector(`#coffee-${coffees.length}`))
+                info[compiled].addEventListener('click',reloadInfo)
+
+                compiled++
+                setTimeout(function () {
+                    coffees.sort(function (a, b) {
+                        let roastOrder = {light: 1, medium: 2, dark: 3};
+                        return roastOrder[a.roast] - roastOrder[b.roast];
+                    })
+                    coffeeList.innerHTML = renderCoffees(coffees)
+                }, .1000)
             }
         } else {
-            break
+            break;
         }
     }
+    newCoffee.value = '';
+    infoInput.value = '';
+    originInput.value = '';
 }
 
 coffeeList.innerHTML = renderCoffees(coffees);
@@ -206,15 +226,12 @@ roastSelection.addEventListener('change', updateCoffees);
 submitButton.addEventListener('click', reset);
 submitButton2.addEventListener('click', freshCoffee);
 
-let info = [];
-let id = 0;
 for (let i = 0; i < coffees.length; i++) {
-    console.log(coffees[i])
-    console.log(coffees[i].id)
     info[i] = document.querySelector(`#coffee-${coffees[i].id}`)
-    info[i].addEventListener('click', function infoCoffee() {
+    info[i].addEventListener('click', function (e) {
+        e.preventDefault();
         coffeeInfo.innerHTML = coffees[i].info;
         coffeeOrigin.innerHTML = coffees[i].origin;
     });
+    compiled++
 }
-

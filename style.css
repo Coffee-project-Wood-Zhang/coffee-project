@@ -21,7 +21,7 @@ h1 {
     font-size: xxx-large;
 }
 
-h2{
+h2 {
     padding-top: 10px;
     text-decoration: underline;
 }
@@ -36,17 +36,18 @@ span.roast {
     padding: 15px 10px;
     font-weight: bold;
 }
-button.coffee{
+
+button.coffee {
     border: none;
     background: none;
 }
 
-button.coffee:hover{
+button.coffee:hover {
     background: rgba(255, 255, 255, .5);
 }
 
 .white-layer {
-    height:100%;
+    height: 100%;
     background-color: rgba(242, 235, 230, .6);
 }
 
@@ -56,7 +57,8 @@ span.img {
     justify-content: center;
     align-items: center;
 }
-div.parent{
+
+div.parent {
     position: relative;
 }
 
@@ -91,7 +93,7 @@ img.child {
     position: absolute;
 }
 
-#coffees{
+#coffees {
     padding: 5px;
     display: flex;
     flex-direction: column-reverse;
@@ -99,27 +101,36 @@ img.child {
     overflow-y: scroll;
     margin-bottom: 0rem;
 }
-p{
+
+p {
     padding-top: 5px;
 }
-button.icon-btn{
+
+button.icon-btn {
     border: none;
-    background-color:#6f4e37;
+    background-color: #6f4e37;
     border-radius: 10%;
     width: 30px;
     height: 30px;
 }
 
-button#submit{
+button#submit {
     border-radius: 100%;
 }
-.nav-link{
+
+.nav-link {
     color: #4c3525;
 }
-.nav{
+
+.nav {
     border: none;
 }
-.tab-pane, tab-content{
+
+.tab-content{
     height: 12.5rem;
+}
+
+.tab-pane{
+    height: 12rem;
     overflow-y: scroll;
 }

@@ -20,12 +20,12 @@
     <div class="white-layer p-2">
 
         <h1 class="text-center header">Welcome to Wood's Coffee Emporium.</h1>
-<!--Main Body-->
+        <!--Main Body-->
         <div class=" row">
             <div class="col-12 col-md-6">
-<!--Left Side-->
+                <!--Left Side-->
                 <div class="row">
-<!--Search coffee-->
+                    <!--Search coffee-->
                     <form class="search col-12 mt-5">
                         <h2> Search for Coffee</h2>
                         <div class="row">
@@ -52,9 +52,10 @@
                             </div>
                         </div>
                     </form>
-<!--Add coffee-->
+                    <!--Add coffee-->
                     <form class="addition col-12 mt-4 mb-4">
                         <h2>Add to our Selection?</h2>
+                        <!--New Roast Type-->
                         <div class="row">
                             <label class="col-1" for="new-roast-selection">
                                 <img height="30" src="img/coffee_maker_FILL0_wght400_GRAD0_opsz48.png">
@@ -66,6 +67,7 @@
                                     <option>dark</option>
                                 </select>
                             </div>
+                            <!--Add Name-->
                             <div class="col-1"></div>
                             <div class="col-11">
                                 <div class="col-12">
@@ -75,6 +77,7 @@
                                     <input type="text" id="new-coffee" placeholder="Enter a new coffee here!">
                                 </div>
                             </div>
+                            <!--Add Flavor info-->
                             <div class="col-1"></div>
                             <div class="col-11">
                                 <div class="12">
@@ -84,6 +87,7 @@
                                     <input type="text" id="coffee-info" placeholder="How does it taste?">
                                 </div>
                             </div>
+                            <!--Add Origin info-->
                             <div class="col-1"></div>
                             <div class="col-11">
                                 <div class="col-12">
@@ -98,23 +102,27 @@
                             </div>
                         </div>
                     </form>
-<!--Extra info-->
+                    <!--Extra info-->
                     <section class="container">
                         <div class="col-12 extra-info py-3">
                             <h2>Extra info about the Coffee!</h2>
+                            <!--Nav-Tabs-->
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
+                                    <!--Home/ General Info-->
                                     <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
                                             data-bs-target="#home-tab-pane" type="button" role="tab"
                                             aria-controls="home-tab-pane" aria-selected="true">General Info
                                     </button>
                                 </li>
+                                <!--Taste/Flavor tab-->
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="taste-tab" data-bs-toggle="tab"
                                             data-bs-target="#taste-tab-pane" type="button" role="tab"
                                             aria-controls="taste-tab-pane" aria-selected="false">Flavor
                                     </button>
                                 </li>
+                                <!--Profile/Origin tab-->
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
                                             data-bs-target="#profile-tab-pane" type="button" role="tab"
@@ -125,13 +133,15 @@
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel"
                                      aria-labelledby="home-tab" tabindex="0">
+                                    <h4>Light Roast</h4>
                                     <p>Light brown in color, this roast is generally preferred for milder coffee
                                         varieties. There will be no oil on the surface of these beans because they are
                                         not roasted long enough for the oils to break through to the surface.</p>
+                                    <h4>Medium Roast</h4>
                                     <p>This roast is medium brown in color with a stronger flavor and a non-oily
                                         surface. It’s often referred to as the American roast because it is generally
-                                        preferred in the United States.
-                                    </p>
+                                        preferred in the United States.</p>
+                                    <h4>Dark Roast</h4>
                                     <p>This roast produces shiny black beans with an oily surface and a pronounced
                                         bitterness. The darker the roast, the less acidity will be found in the coffee
                                         beverage. Dark roast coffees run from slightly dark to charred, and the names
@@ -152,7 +162,7 @@
                     </section>
                 </div>
             </div>
-<!--All coffees-->
+            <!--All coffees-->
             <section class="menu col-12 col-md-6 mt-5">
                 <h3 class="coffee-list-title text-center">All Coffees!</h3>
                 <div id="coffees"></div>
