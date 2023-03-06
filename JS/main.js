@@ -131,14 +131,14 @@ function renderCoffee(coffee) {
 
 function renderCoffees(coffees) {
     let html = '';
-    for (let i = 0; i <coffees.length; i++) {
+    for (let i = 0; i < coffees.length; i++) {
         html += renderCoffee(coffees[i]);
     }
     return html;
 }
 
 function updateCoffees(e) {
-    e.preventDefault(); // don't submit the form, we just want to update the data
+    e.preventDefault();
     let selectedRoast = roastSelection.value;
     let filteredCoffees = [];
     coffees.forEach(function (coffee) {
@@ -151,10 +151,10 @@ function updateCoffees(e) {
 }
 
 function searchCoffeeFunction() {
-    let searchInput = coffeeSearch.value;
+    let searchInput = coffeeSearch.value.toLowerCase();
     let filteredCoffees = [];
     coffees.forEach(function (coffee) {
-        if (coffee.name.includes(searchInput)) {
+        if (coffee.name.toLowerCase().includes(searchInput)) {
             filteredCoffees.push(coffee);
         }
     });
@@ -170,7 +170,7 @@ function reset(e) {
     coffeeSearch.value = '';
 }
 
-function reloadInfo(){
+function reloadInfo() {
     for (let i = 0; i < coffees.length; i++) {
         info[i] = document.querySelector(`#coffee-${coffees[i].id}`)
         info[i].addEventListener('click', function () {
@@ -200,10 +200,16 @@ function freshCoffee(e) {
             if (n !== idNum) {
                 continue;
             } else if (n === idNum) {
-                coffees.push({id: idNum + 1, name: coffeeName, roast: roastType, info: info2, origin: origin})
+                coffees.push({
+                    id: idNum + 1,
+                    name: coffeeName,
+                    roast: roastType,
+                    info: '<h2>' + coffeeName + '</h2>' + '<p>' + info2 + '</p>',
+                    origin: '<h2>' + coffeeName + '</h2>' + '<p>' + origin + '</p>'
+                })
                 coffeeList.innerHTML = renderCoffees(coffees);
                 info.push(document.querySelector(`#coffee-${coffees.length}`))
-                info[compiled].addEventListener('click',reloadInfo)
+                info[compiled].addEventListener('click', reloadInfo)
                 compiled++
             }
         } else {
