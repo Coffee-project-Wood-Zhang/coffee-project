@@ -96,7 +96,7 @@ img.child {
 #coffees {
     padding: 5px;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     height: 37.5rem;
     overflow-y: scroll;
     margin-bottom: 0rem;
