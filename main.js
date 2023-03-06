@@ -82,6 +82,7 @@ submitButton.addEventListener('click', reset);
 function reset() {
     roastSelection.value = 'All';
     coffeeListTitle.innerHTML = 'All coffees';
+    searchCoffee.value = '';
     coffeeList.innerHTML = renderCoffees(coffees);
 }
 
