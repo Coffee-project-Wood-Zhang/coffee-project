@@ -177,7 +177,6 @@ function reloadInfo() {
             coffeeInfo.innerHTML = coffees[i].info;
             coffeeOrigin.innerHTML = coffees[i].origin;
         });
-        compiled++
     }
 }
 

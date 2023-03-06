@@ -99,7 +99,7 @@ img.child {
     flex-direction: column;
     height: 37.5rem;
     overflow-y: scroll;
-    margin-bottom: 0rem;
+    margin-bottom: 0;
 }
 
 p {
@@ -133,4 +133,7 @@ button#submit {
 .tab-pane {
     height: 12rem;
     overflow-y: scroll;
-}
+}h4{
+    padding-top: 0.5rem;
+    text-decoration: underline;
+ }
