@@ -170,11 +170,15 @@ function reset(e) {
     coffeeSearch.value = '';
 }
 
-function reloadInfo(e){
-    e.preventDefault();
-    console.log(compiled)
-    coffeeInfo.innerHTML = coffees[compiled].info;
-    coffeeOrigin.innerHTML = coffees[compiled].origin;
+function reloadInfo(){
+    for (let i = 0; i < coffees.length; i++) {
+        info[i] = document.querySelector(`#coffee-${coffees[i].id}`)
+        info[i].addEventListener('click', function () {
+            coffeeInfo.innerHTML = coffees[i].info;
+            coffeeOrigin.innerHTML = coffees[i].origin;
+        });
+        compiled++
+    }
 }
 
 function freshCoffee(e) {
@@ -200,15 +204,14 @@ function freshCoffee(e) {
                 coffeeList.innerHTML = renderCoffees(coffees);
                 info.push(document.querySelector(`#coffee-${coffees.length}`))
                 info[compiled].addEventListener('click',reloadInfo)
-
                 compiled++
-                setTimeout(function () {
-                    coffees.sort(function (a, b) {
-                        let roastOrder = {light: 1, medium: 2, dark: 3};
-                        return roastOrder[a.roast] - roastOrder[b.roast];
-                    })
-                    coffeeList.innerHTML = renderCoffees(coffees)
-                }, .1000)
+                // setTimeout(function () {
+                //     coffees.sort(function (a, b) {
+                //         let roastOrder = {light: 1, medium: 2, dark: 3};
+                //         return roastOrder[a.roast] - roastOrder[b.roast];
+                //     })
+                //     coffeeList.innerHTML = renderCoffees(coffees)
+                // }, .0100)
             }
         } else {
             break;
@@ -228,12 +231,9 @@ submitButton2.addEventListener('click', freshCoffee);
 
 for (let i = 0; i < coffees.length; i++) {
     info[i] = document.querySelector(`#coffee-${coffees[i].id}`)
-    info[i].addEventListener('click', function (e) {
-        e.preventDefault();
-        console.log(`clicked`)
+    info[i].addEventListener('click', function () {
         coffeeInfo.innerHTML = coffees[i].info;
         coffeeOrigin.innerHTML = coffees[i].origin;
     });
-    console.log(info[i])
     compiled++
 }
